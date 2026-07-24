@@ -5,12 +5,9 @@
     <title>DTSIM — Localized Intelligence Module Portfolio (v3.9)</title>
     <style>
 
-/* ==========================================
-   DTSIM COMPACT A4 PRINT OVERRIDE
-   ========================================== */
 @media print {
     body {
-        font-size: 9.5pt !important; /* Slightly smaller text to prevent line wrapping */
+        font-size: 9.5pt !important;
         line-height: 1.4 !important;
         padding: 0 !important;
         margin: 0 !important;
@@ -18,57 +15,50 @@
         color: #1a202c !important;
     }
 
-    /* Compress the main layout container */
     .container {
         width: 100% !important;
-        max-width: 174mm !important; /* Hard constraint for A4 printable width */
+        max-width: 174mm !important;
         margin: 0 auto !important;
         padding: 0 !important;
     }
 
-    /* Tighten the gaps on flex containers (Sidebars/Grids) */
     .flex-layout, .grid-layout, [style*="display: flex"] {
         display: flex !important;
-        gap: 12px !important; /* Shrinks the empty space pushing elements apart */
+        gap: 12px !important;
         flex-direction: row !important;
         align-items: flex-start !important;
     }
 
-    /* Prevent massive structural headers from forcing page breaks */
     h1 { font-size: 18pt !important; margin-bottom: 8px !important; }
     h2 { font-size: 14pt !important; margin-top: 12px !important; margin-bottom: 6px !important; }
     h3 { font-size: 11pt !important; margin-top: 8px !important; margin-bottom: 4px !important; }
 
-    /* Shrink and lock the image grid layout */
     .image-grid, [style*="grid-template-columns"] {
         display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 10px !important;
     }
 
-    /* Force images to scale responsively within their compressed boxes */
     img {
         max-width: 100% !important;
         height: auto !important;
-        max-height: 180px !important; /* Caps the vertical space images can steal */
+        max-height: 180px !important;
         object-fit: cover !important;
         border-radius: 4px !important;
     }
 
-    /* Tighten data verification and hardware cost tables */
     table {
         width: 100% !important;
-        font-size: 8.5pt !important; /* Crisp, micro-legible text for data density */
+        font-size: 8.5pt !important;
         margin-bottom: 10px !important;
     }
     
     th, td {
-        padding: 4px 6px !important; /* Trims vertical padding down to the absolute minimum */
+        padding: 4px 6px !important;
     }
 
-    /* Defensive Page Breaking: Keeps sections unified */
     .section, fieldset, tr {
-        page-break-inside: avoid !important; /* Stops a section or table row from splitting in half */
+        page-break-inside: avoid !important; 
     }
 }
 
@@ -96,7 +86,6 @@
             background-color: #ffffff;
         }
 
-        /* Tech Terminal Header Styling */
         .tech-header {
             border-bottom: 3px solid #2b6cb0;
             padding-bottom: 20px;
@@ -141,7 +130,6 @@
             text-justify: inter-word;
         }
 
-        /* Architectural Metadata Panel */
         .meta-container {
             display: flex;
             justify-content: space-between;
@@ -167,7 +155,6 @@
             font-weight: 500;
         }
 
-        /* Hero (Large) Image Container */
         .image-container-hero {
             text-align: center;
             margin: 25px 0;
@@ -185,7 +172,6 @@
             border-radius: 4px;
         }
 
-        /* Side-by-Side Image Row for Grid Assets */
         .image-grid-row {
             display: flex;
             gap: 20px;
@@ -218,7 +204,6 @@
             font-weight: 500;
         }
 
-        /* Highlight Callout Box */
         .tech-callout {
             background-color: #ebf8ff;
             border-left: 4px solid #3182ce;
@@ -234,7 +219,6 @@
             text-align: left;
         }
 
-        /* System Directory Layout Box */
         .dir-structure {
             background-color: #1a202c;
             color: #a0aec0;
@@ -251,7 +235,6 @@
             font-weight: bold;
         }
 
-        /* Technical Specification Data Spread */
         table.spec-table {
             width: 100%;
             border-collapse: collapse;
