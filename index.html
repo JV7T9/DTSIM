@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>DTSIM — Localized Intelligence Module Portfolio (v3.9)</title>
+    <title>DTSIM — Localized Intelligence Module Portfolio</title>
     <style>
 
 @media print {
@@ -66,7 +66,7 @@
             size: A4;
             margin: 22mm 18mm;
             @bottom-right {
-                content: "DTSIM Technical Blueprint v3.9 | Page " counter(page);
+                content: "DTSIM Technical Blueprint | Page " counter(page);
                 font-family: 'Helvetica Neue', Arial, sans-serif;
                 font-size: 8pt;
                 color: #718096;
@@ -140,6 +140,9 @@
             margin-bottom: 35px;
             font-size: 9pt;
         }
+
+        .meta-container { flex-wrap: wrap; gap: 14px 28px; justify-content: flex-start; }
+        .meta-block { min-width: 140px; }
 
         .meta-block strong {
             color: #2b6cb0;
@@ -299,40 +302,46 @@
     <div class="meta-container">
         <div class="meta-block"><strong>Architect</strong><span>John Va’afuti</span></div>
         <div class="meta-block"><strong>Location</strong><span>Auckland, New Zealand</span></div>
-        <div class="meta-block"><strong>Compliance Baseline</strong><span>Privacy Act / IPP3A Targeted</span></div>
-        <div class="meta-block"><strong>Security Classification</strong><span>Zero-Footprint Local Compute</span></div>
+        <div class="meta-block"><strong>Compliance Baseline</strong><span>Privacy Act / IPP3A (design target)</span></div>
+        <div class="meta-block"><strong>Security Classification</strong><span>Zero-Footprint Local Compute (design goal)</span></div>
+        <div class="meta-block"><strong>Status</strong><span>Demo pipeline complete · live integration in progress</span></div>
     </div>
 
-    <h2>1. System Overview & Core Architecture ("Plug-and-Play" Brain)</h2>
+    <h2>1. System Overview &amp; Core Architecture ("Plug-and-Play" Brain)</h2>
     <p>
-        The <strong>Digital Transcription Software Intelligence Module (DTSIM)</strong> is a hardware-bound corporate security solution developed to address data leakage exposures inherent in multi-source network monitoring. Enterprise infrastructures operating traditional security pipelines frequently risk indirect data harvesting compliance breaches under the New Zealand Privacy Amendment Act (specifically <strong>Information Privacy Principle 3A</strong>).
+        The <strong>Digital Transcription Software Intelligence Module (DTSIM)</strong> is a forensic software overlay for corporate security. It sits over the <strong>Video Management System (VMS)</strong> and <strong>Access Management System (AMS)</strong> a site already runs, reads their events, and adds the investigation layer they lack: footage and badge data merged into one chronological forensic picture. It does not replace the installed systems. Within Site Security OPS it is the first <strong>Software Overlay Technology (SOT)</strong> module, offered through OPS-Access.
     </p>
-  
+    <p>
+        DTSIM is also designed to address the data leakage exposure inherent in multi-source network monitoring. Enterprise infrastructures running traditional security pipelines risk indirect data harvesting and compliance breaches under the New Zealand Privacy Amendment Act (specifically <strong>Information Privacy Principle 3A</strong>).
+    </p>
+
     <div class="tech-callout">
-        <p><strong>Operational Imperative:</strong> DTSIM shifts the intelligence paradigm by executing all computational logic, video transcription, and multi-source database queries entirely in volatile memory via a localized physical medium. It enforces a strict zero-byte residual file imprint on host server operating drives (<span class="math">C:\</span>).</p>
+        <p><strong>Operational Imperative:</strong> DTSIM is designed to execute all computational logic, video transcription and multi-source database queries in volatile memory on a localised physical medium, leaving a zero-byte residual file imprint on host server operating drives (<span class="math">C:\</span>).</p>
     </div>
-  
+
     <ul>
         <li><strong>Identity:</strong> DTSIM (Digital Transcription Software Intelligence Module).</li>
-        <li><strong>Engine Environment:</strong> Local Node.js server environment running containerized local Vision-Language Models (VLMs).</li>
-        <li><strong>Physical Medium:</strong> High-speed NVMe SSD (Gen 4/5) running Portable Node.js/Docker configurations, enabling a plug-and-play architecture with zero installation required on the host machine.</li>
-        <li><strong>Volatile Processing Matrix:</strong> AI inference occurs strictly in-memory. Dynamic video frames and real-time session data are thoroughly wiped automatically upon hardware disconnection.</li>
+        <li><strong>Role:</strong> Vendor-neutral forensic overlay for sites that already run separate video and access-control systems (SOT).</li>
+        <li><strong>Engine Environment:</strong> Local Node.js server environment running containerised local Vision-Language Models (VLMs).</li>
+        <li><strong>Physical Medium:</strong> High-speed NVMe SSD (Gen 4/5) running Portable Node.js/Docker configurations, enabling a plug-and-play architecture with no installation on the host machine.</li>
+        <li><strong>Volatile Processing Matrix:</strong> AI inference is designed to run strictly in memory. Dynamic video frames and real-time session data are wiped upon hardware disconnection.</li>
+        <li><strong>Deployment Options:</strong> (a) a sovereign plug-and-play module the client owns and keeps on site, or (b) an online connection by subscription.</li>
     </ul>
 
     <div class="image-container-hero">
         <img src="assets/Image_1.0.jpg" alt="DTSIM Hardware Architecture Core">
-        <div class="image-caption">Figure 1.0: DTSIM v2.0 Localized External Core Module Tethered via Secure 40Gbps USB4 Interface Link</div>
+        <div class="image-caption">Figure 1.0: DTSIM Localized External Core Module Tethered via Secure 40Gbps USB4 Interface Link</div>
     </div>
 
     <h2>2. Physical-to-Virtual Network Handshake</h2>
     <p>
-        The implementation matrix isolates host client environments while pulling necessary forensic telemetry smoothly into the local high-speed RAM layer. To support rapid VLM container routing offline, the backend deployment runs an advanced on-site infrastructure:
+        The implementation isolates the host client environment while pulling the necessary forensic telemetry into the local high-speed RAM layer. To support VLM container routing offline, the backend deployment runs on-site infrastructure:
     </p>
     <ul>
-        <li><strong>Local Processing Core:</strong> Managed via a localized main control workstation featuring an **AMD Ryzen 5 Server Array** combined with **4TB WD Red Data Drive Storage pools** to process intensive video ingestion datasets offline.</li>
+        <li><strong>Local Processing Core:</strong> A localised main control workstation featuring an <strong>AMD Ryzen 5 Server Array</strong> combined with <strong>4TB WD Red Data Drive storage pools</strong> to process intensive video ingestion datasets offline.</li>
         <li><strong>Data Link Connection:</strong> Direct physical Gigabit Ethernet (RJ45) connection to the client's isolated Security VLAN.</li>
-        <li><strong>Secure Tunneling Matrix:</strong> Cisco Secure Client (VPN) combined with **pfSense Enterprise Hardware Firewalls** allows the DTSIM to "see" and securely interface with the VMS and AMS from either a remote or local workstation node.</li>
-        <li><strong>Data Ingestion Protocols:</strong> Live data stream acquisition is accomplished via Real-Time Streaming Protocol (RTSP) for video components alongside secure SQL/API transaction drivers for access logs.</li>
+        <li><strong>Secure Tunnelling:</strong> Cisco Secure Client (VPN) combined with <strong>pfSense hardware firewalls</strong> allows DTSIM to securely interface with the VMS and AMS from either a remote or local workstation node.</li>
+        <li><strong>Data Ingestion Protocols:</strong> Live data is acquired over Real-Time Streaming Protocol (RTSP) for video, alongside secure SQL/API transaction drivers for access logs.</li>
     </ul>
 
     <div class="image-grid-row">
@@ -348,17 +357,32 @@
 
     <h2>3. Unified Intelligence (The "Alloy" Core)</h2>
     <p>
-        The core intelligence layer functions as a proprietary data synthesis utility that fuses disjointed network feeds into standalone forensic assets:
+        The core intelligence layer is a data synthesis utility that fuses disjointed network feeds into standalone forensic assets:
     </p>
     <ul>
-        <li><strong>Multi-Source Correlation:</strong> Natively merges unstructured visual pixel tracks from VMS footage with transactional timestamp data from AMS badge swipe logs.</li>
-        <li><strong>Narrative Output Synthesis:</strong> Dynamically converts raw pixel streams and numerical ID logs into human-readable chronological forensic reports highlighting security anomalies, perimeter tailgating, or unauthorized physical breach paths.</li>
-        <li><strong>Modular Resonance Tweaks:</strong> Supports flexible, client-specific execution profiles toggleable through the UI, letting operators scale the system behavior between <em>Forensic Detail Mode</em> and <em>Privacy-First Log Masking</em>.</li>
+        <li><strong>Multi-Source Correlation:</strong> Merges visual tracks from VMS footage with transactional timestamp data from AMS badge-swipe logs.</li>
+        <li><strong>Narrative Output Synthesis:</strong> Converts raw video streams and numerical ID logs into human-readable chronological forensic reports that highlight security anomalies, perimeter tailgating and unauthorised physical breach paths.</li>
+        <li><strong>Operating Modes:</strong> Client-specific profiles toggled through the UI let operators move between <em>Forensic Detail Mode</em> and <em>Privacy-First Log Masking</em>.</li>
     </ul>
 
-    <h2>4. Software Assembly Partition & Core Cost Matrix</h2>
+    <h2>4. Operator Workflow &amp; Modules</h2>
     <p>
-        The hardware deployment environment translates operational dependencies directly through an isolated file workspace structure executed on the external media asset:
+        DTSIM is command-driven. An investigation runs in five steps:
+    </p>
+    <ul>
+        <li><strong>1. Command:</strong> The operator enters a forensic or operational command.</li>
+        <li><strong>2. Scope:</strong> The operator sets the camera and the time window.</li>
+        <li><strong>3. Review:</strong> The clip and snapshots are reviewed in the Forensics panel.</li>
+        <li><strong>4. Timeline:</strong> Events are added to the case timeline.</li>
+        <li><strong>5. Investigation Pack:</strong> A pack is generated to email or print.</li>
+    </ul>
+    <p>
+        The interface is organised into six modules: <strong>Events, Cameras, Forensics, Logs, Diagnostics</strong> and <strong>Options</strong>, with live status shown for the connected VMS, AMS and SQL systems.
+    </p>
+
+    <h2>5. Software Assembly Partition &amp; Core Cost Matrix</h2>
+    <p>
+        The deployment environment maps operational dependencies onto an isolated file workspace executed from the external media asset:
     </p>
 
     <div class="dir-structure">
@@ -368,14 +392,14 @@
         │   ├── <span class="dir-highlight">interface.html</span> (Localized Graphical Dashboard Lens)<br>
         │   └── app.js (Asynchronous Front-End Request Controller)<br>
         ├── server/<br>
-        │   └── <span class="dir-highlight">server.js</span> (In-Memory Ingestion & Transcription Core Orchestrator)<br>
+        │   └── <span class="dir-highlight">server.js</span> (In-Memory Ingestion &amp; Transcription Core Orchestrator)<br>
         └── binaries/<br>
             ├── node/ (Portable Runtime Environment Binary Engine)<br>
             └── ffmpeg/ (Local In-Memory Video Stream Demuxing Engine)
     </div>
 
     <p>
-        Sourcing and staging costs for development are highly optimized utilizing local commercial channels within New Zealand:
+        Sourcing and staging costs for the proof-of-concept package use local commercial channels within New Zealand:
     </p>
 
     <table class="spec-table">
@@ -420,18 +444,18 @@
         </tbody>
     </table>
 
-    <h2>5. Commercial Compliance (IPP3A SHIELD)</h2>
+    <h2>6. Commercial Compliance (IPP3A Shield)</h2>
     <p>
-        Purpose-built to shield modern enterprises from systemic regulatory exposures, the DTSIM framework provides native protection aligning with the New Zealand Privacy Amendment Act parameters:
+        DTSIM is designed to help organisations meet New Zealand Privacy Amendment Act obligations. This is a design target, not a certification: independent testing and audit are still to come.
     </p>
     <ul>
-        <li><strong>IPP3A Compliance Automation:</strong> Features an embedded, automated "Reasonable Steps" ledger generator designed specifically to satisfy strict oversight regulations regarding indirect metadata collection.</li>
-        <li><strong>Mandatory Notification Data Processing:</strong> The orchestration system automatically identifies, segments, and caches the primary parameters needed for compliance reporting registries: <em>Source verification</em>, <em>Collection purpose tracking</em>, and <em>Intended data recipient matrices</em>.</li>
+        <li><strong>IPP3A Compliance Automation:</strong> An embedded, automated "Reasonable Steps" ledger generator, designed to support oversight requirements around indirect metadata collection.</li>
+        <li><strong>Mandatory Notification Data Processing:</strong> The system is designed to identify, segment and cache the parameters needed for compliance reporting: <em>source verification</em>, <em>collection purpose tracking</em> and <em>intended data recipients</em>.</li>
     </ul>
 
-    <h2>6. Regulatory Safeguards & Kernel Partition Defense</h2>
+    <h2>7. Regulatory Safeguards &amp; Kernel Partition Defense</h2>
     <p>
-        The primary value driver for enterprise risk management divisions lies within the module's automated defensive layer. If unauthorized extraction is detected, a hardware-level interrupt script initializes, instantly locking down local file partitions.
+        The defensive layer is a primary value driver for enterprise risk management. If unauthorised extraction is detected, a hardware-level interrupt script is designed to lock down local file partitions.
     </p>
 
     <div class="image-grid-row">
@@ -445,12 +469,16 @@
         </div>
     </div>
 
-    <h2>7. Downstream Operational Deployment Integration</h2>
+    <h2>8. Place Within Site Security OPS</h2>
     <p>
-        While DTSIM functions perfectly as a standalone elite technical consultancy software asset, long-term ecosystem scaling plans allow the intelligence module to integrate natively into physical workforce protection layers. The module’s telemetry logs can effortlessly expand to feed local enterprise command installations, proprietary tactical apparel configurations, and field operative coordination platforms once localized physical perimeters are stabilized.
+        DTSIM is one layer of <strong>OPS-Access</strong>, the software side of Site Security OPS. It works alongside the consultancy services, which build or restructure a site's security operation, and alongside two further tools:
     </p>
+    <ul>
+        <li><strong>Telemetry Forensic Modeller (TFM):</strong> a free modelling tool, available now.</li>
+        <li><strong>Agent OPS (in development):</strong> a subscription lens that reads a site's own activity and movements to show where department activity collides and slows an operation, so the cause can be removed or a protocol introduced. It works from site-level flows and patterns, with client consent and privacy policies in place.</li>
+    </ul>
 <footer style="margin-top: 40px; padding: 20px; border-top: 1px solid #eaeaea; text-align: center;">
-    <p>Related Resource: <a href="https://lnkd.in/p/exh2aPfp" target="_blank" rel="noopener noreferrer">View DTSIM v4.0 Interface Design</a></p>
+    <p>Related Resource: <a href="https://lnkd.in/p/exh2aPfp" target="_blank" rel="noopener noreferrer">View the DTSIM Interface Design</a></p>
 </footer>
 </body>
-</html> 
+</html>
