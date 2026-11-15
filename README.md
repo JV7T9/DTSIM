@@ -1,6 +1,6 @@
 # DTSIM
 
-**Digital Transcription Software Intelligence Module** — part of [Site Security OPS](#)
+**Digital Transcription Software Intelligence Module** — part of [Site Security OPS](https://site-security-ops.sitesecurityops.workers.dev)
 
 DTSIM is a forensic software overlay for sites that already run separate video and access-control systems. It connects to the Video Management System (VMS) and Access Management System (AMS) a site already operates, merges camera footage with access events, and builds a single chronological forensic picture. It is designed to run on local compute with a zero-footprint, volatile-memory execution model.
 
@@ -41,7 +41,7 @@ Compliance and security properties described in the blueprint are design targets
 - Expanded forensic automation
 - Hardware-bound deployment package
 - Multi-module intelligence orchestration
-- Agent OPS — a subscription lens that shows where department activity collides and slows a site (in development)
+- DTSIM Pulse — a reporting lens that shows a site's busiest and quietest timeframes and where department activity collides, unlocked with a DTSIM purchase
 
 ## Licence
 See `LICENSE`.
